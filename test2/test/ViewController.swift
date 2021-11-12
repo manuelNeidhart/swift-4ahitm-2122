@@ -27,20 +27,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onChangeTextField(_ sender: UITextField) {
-        if(model.isValid(guess: Int(textField.text!))){
-        buttonGuess.isEnabled = true;
-        } else {
-            buttonGuess.isEnabled = false
-        }
+        buttonGuess.isEnabled = model.isValid(guess: Int(textField.text!))
     }
     
     @IBAction func onclick(_ sender: UIButton) {
-        // Check for input not nill
-        //if(checkNumber()){
-            
-        //}
-        
-        model.counterOfTrys+=1
+        model.counterOfTrys += 1
     }
     
     func compare(guessedString: String) -> Int! {
