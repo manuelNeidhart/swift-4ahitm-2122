@@ -39,6 +39,11 @@ class ViewController: UIViewController {
         return model.compare(guess: guess)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultViewController  = segue.destination as? ResultViewController
+        resultViewController?.model = model
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if(checkNumber()){
             return true

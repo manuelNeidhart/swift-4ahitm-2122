@@ -8,10 +8,11 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-
+    var model : Model!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     

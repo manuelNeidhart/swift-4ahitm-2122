@@ -10,7 +10,7 @@
         <!--Detail-->
         <scene sceneID="T9m-Zd-neN">
             <objects>
-                <viewController id="5tY-dB-jEQ" sceneMemberID="viewController">
+                <viewController id="5tY-dB-jEQ" customClass="ResultViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6x-9p-3Vu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
