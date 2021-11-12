@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onclick(_ sender: UIButton) {
-        model.counterOfTrys += 1
+        
     }
     
     func compare(guessedString: String) -> Int! {

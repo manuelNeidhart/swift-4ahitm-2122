@@ -10,13 +10,17 @@ import UIKit
 class ResultViewController: UIViewController {
     var model : Model!
     
+    @IBOutlet weak var LabelTrys: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        LabelTrys.text = "Deine Versuche: " + String(model.counterOfTrys)
         // Do any additional setup after loading the view.
     }
     
-
+    
+    
     /*
     // MARK: - Navigation
 
