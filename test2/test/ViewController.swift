@@ -9,14 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
     var model = Model()
-    var guessedNumber = 0
-
+    
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var buttonGuess: UIButton!
     
-    
+    @IBAction func newGameButton(_ sender: Any) {
+        viewDidLoad()
+        model.resetAttempts()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onclick(_ sender: UIButton) {
-        
+        let guess = Int(textField.text!)!
+        model.addGuessedNumber(guess: guess)
     }
     
     func compare(guessedString: String) -> Int! {
@@ -40,8 +43,8 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let resultViewController  = segue.destination as? ResultViewController
-        resultViewController?.model = model
+        let tableViewController  = segue.destination as? TableViewController
+        tableViewController?.model = model
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -53,13 +56,11 @@ class ViewController: UIViewController {
     }
     
     func checkNumber() -> Bool{
-        if(Optional(guessedNumber) != nil){
-            print("")
-            guessedNumber = compare(guessedString: textField.text!)
+        let compareResult = compare(guessedString: textField.text!)
             
             let text: String?
             
-            switch guessedNumber{
+            switch compareResult{
             case -1:
                 text = "Your number is to low"
                 label.text = text
@@ -73,12 +74,6 @@ class ViewController: UIViewController {
                 label.text = text
                 return true
             }
-            
-            
-        }
-        return false
     }
-
-
 }
 
